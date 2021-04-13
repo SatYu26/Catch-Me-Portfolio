@@ -5,14 +5,15 @@ var randomWidth = () => {
   if (detectMob()) {
     //    x = getRndInteger(65,85);
     document.querySelector(".container-box").style.width = "80%";
-    document.querySelector(".container-box").setAttribute("data-value",  " "); 
-      document.querySelector(".btn-stop").style.opacity = "0";
+    document.querySelector(".container-box").setAttribute("data-value", " ");
+    document.querySelector(".btn-stop").style.opacity = "0";
     clearInterval(interval);
   } else {
-    x = getRndInteger(30, 70); 
+    x = getRndInteger(30, 70);
     document.querySelector(".container-box").style.width = x + "%";
-    document.querySelector(".container-box").setAttribute("data-value", x+ "%"); 
-
+    document
+      .querySelector(".container-box")
+      .setAttribute("data-value", x + "%");
   }
 };
 
@@ -33,12 +34,12 @@ stopbtn.addEventListener("mouseover", function () {
   this.style.top = getRndInteger(-10, 99) + "%";
   BODY.style.background = getRandomColor();
   this.innerHTML = "Stop it :)";
-  this.style.bottom = "auto"; 
+  this.style.bottom = "auto";
 });
 
 stopbtn.addEventListener("click", function () {
   clearInterval(interval);
-  BODY.style.background = "white"; 
+  BODY.style.background = "white";
   this.style.opacity = "0";
 });
 
@@ -47,14 +48,14 @@ function detectMob() {
 }
 
 function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
+  var letters = "0123456789ABCDEF";
+  var color = "#";
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
 }
 
-document.querySelector("#date_").innerHTML =(new Date()).getFullYear();
+document.querySelector("#date_").innerHTML = new Date().getFullYear();
 // document.querySelector(".footer").style.marginTop = (window.innerHeight/2) - 250 +"px";
 // console.log(window.innerHeight)
